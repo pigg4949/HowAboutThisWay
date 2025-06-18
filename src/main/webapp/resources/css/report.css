@@ -1,0 +1,148 @@
+:root {
+    --primaryColor: #e6d3a4;
+    --inactiveColor: #ccc;
+    --bgColor: #f5f0e3;
+}
+
+body {
+    background: #e5e5e5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0; /* 위 공백 제거 */
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+#app {
+    width: 360px;
+    margin-top: 0;
+    background: var(--bgColor);
+    border-radius: 13px 13px 0 0;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1) 헤더 바 */
+.headerBar {
+    width: 100%; /* 전체 폭 */
+    background: #ede7dd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    position: relative;
+    overflow: visible;
+}
+.headerTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.logoutBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.logoutBtn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 2) 탭 버튼 */
+.tabButtons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 8px;
+}
+.tabActive,
+.tabInactive {
+    background: none;  /* 배경 제거 */
+    border: none;
+    padding: 0;
+}
+.tabActive {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 2px solid var(--primaryColor);
+}
+.tabInactive {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--inactiveColor);
+}
+
+/* 3) 리스트 컨테이너 */
+.listContainer {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 0 60px;
+}
+.reportList { display: none; }
+.reportListActive { display: block; }
+
+.reportItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 16px;
+    gap: 12px;
+}
+.statusIndicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+.statusPending   { background: var(--inactiveColor); }
+.statusApproved  { background: #4caf50; }
+.statusRejected  { background: #f44336; }
+
+.itemTitle {
+    flex: 1;
+    margin: 0 8px;
+    font-size: 14px;
+    color: #333;
+}
+.itemDate {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 4) 페이지네이션 */
+.pagination {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 5) 하단 내비: 즐겨찾기, 홈, 내 정보 */
+.bottomNav {
+    position: absolute;
+    bottom: 0;
+    width: 360px;
+    height: 58px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+.bottomNav .navItem img {
+    width: 28px;
+    height: 28px;
+    filter: grayscale(100%) brightness(0.2);
+    opacity: 0.8;
+}
+.bottomNav .navItem.active img {
+    filter: none;
+    opacity: 1;
+}

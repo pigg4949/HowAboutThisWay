@@ -1,0 +1,113 @@
+/*@import "common.css";*/
+
+#app {
+    position: relative;
+    width: 360px;
+    height: 800px;
+    margin: 0 auto;
+    background: url("../images/background.jpg") no-repeat center top/cover;
+    overflow-y: auto;
+    padding: 24px 16px;
+    box-sizing: border-box;
+}
+
+/* 헤더 (뒤로가기 + 타이틀) */
+.mypage-header {
+    position: relative;
+    height: 56px;            /* 충분한 높이 확보 */
+    padding: 0;               /* left/right padding 제거 */
+    display: flex;
+    align-items: center;     /* 세로 중앙 정렬 */
+    justify-content: center; /* 타이틀 가로 중앙 정렬 */
+    margin-bottom: 24px;
+}
+
+/* 페이지 제목 */
+.pageTitle {
+    margin: 0;               /* auto 마진 제거 */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.backButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -140px;    /* ← 컨테이너 왼쪽에서 100px 밖으로 */
+    padding: 8px;
+    font-size: 20px;
+    color: #222;
+    text-decoration: none;
+    z-index: 10;
+}
+
+
+
+/* form 요소 공통 스타일 */
+form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    height: 42px;
+    padding: 10px;
+    border: none;
+    border-radius: 22px;
+    background-color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+form input[readonly] {
+    background-color: #f7f7f7;
+    color: #666;
+}
+form textarea {
+    width: 100%;
+    height: 140px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    resize: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* 버튼 스타일 */
+.btn-main {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--primaryColor);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-weight: bold;
+}
+.btn-sub,
+.btn-delete {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 24px;
+    font-weight: bold;
+}
+.btn-sub {
+    background-color: var(--primaryColor);
+    color: #fff;
+}
+.btn-delete {
+    background-color: #dcdcdc;
+    color: #000;
+}

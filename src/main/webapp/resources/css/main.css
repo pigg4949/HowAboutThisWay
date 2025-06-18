@@ -1,0 +1,179 @@
+/* main.css */
+@import "common.css";
+
+/* 1) 앱 컨테이너: 360×800 고정 + 배경 + 중앙 정렬 */
+#app {
+    position: relative;
+    width: 360px;
+    height: 800px;
+    margin: 0 auto;
+    background: url("../images/background.jpg") no-repeat center top/cover;
+    display: flex;
+    align-items: center;      /* 세로 중앙 */
+    justify-content: center;  /* 가로 중앙 */
+    overflow: hidden;
+}
+
+/* 2) 카드 그리드: 2열 정렬 */
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* 3) 카드 공통 스타일 */
+.card {
+    background-color: var(--cardBackground);
+    border-radius: var(--borderRadius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* 4) 카드 아이콘 */
+.card img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* 5) 카드 제목 */
+.card span {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 6) 카드 부제목 */
+.card small {
+    margin-top: 4px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+
+
+/* 모달 백그라운드 */
+.modal {
+    display: none;               /* 기본 감춤 */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 모달 보이기 */
+.modal.active {
+    display: flex;
+}
+
+/* 모달 박스 */
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 360px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* 닫기 버튼 (×) */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #e74c3c;            /* 빨간색 크로스 아이콘 */
+}
+
+/* 헤더 제목 */
+.modal-content h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+}
+
+/* 셀렉트 박스 */
+.modal-content select {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    appearance: none;           /* 기본 드롭다운 화살표 숨김 */
+    background: url("data:image/svg+xml;charset=UTF-8,<svg ...>") no-repeat calc(100% - 12px) center; /* 화살표 아이콘 삽입 가능 */
+    background-color: #fff;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+/* 텍스트영역 */
+.modal-content textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: none;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* 버튼 그룹 */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 보조 버튼 */
+.buttonSecondary {
+    background: #81cfe0;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+    margin-right: 8px;
+}
+
+/* 기본(primary) 버튼 */
+.buttonPrimary {
+    background: #f0837b;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+}
+
+/* 버튼 호버 효과 */
+.buttonSecondary:hover,
+.buttonPrimary:hover,
+.modal-close:hover {
+    opacity: 0.85;
+}

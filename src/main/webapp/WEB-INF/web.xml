@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- cSpell:ignore MypagePage mypage -->
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+
+    <servlet>
+        <servlet-name>SignupPage</servlet-name>
+        <jsp-file>/WEB-INF/views/signup.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupPage</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MainPage</servlet-name>
+        <jsp-file>/WEB-INF/views/main.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainPage</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminMainPage</servlet-name>
+        <jsp-file>/WEB-INF/views/adminMain.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMainPage</servlet-name>
+        <url-pattern>/adminMain</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>FindInfoPage</servlet-name>
+        <jsp-file>/WEB-INF/views/findInfo.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FindInfoPage</servlet-name>
+        <url-pattern>/findInfo</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BookmarkPage</servlet-name>
+        <jsp-file>/WEB-INF/views/bookmark.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookmarkPage</servlet-name>
+        <url-pattern>/bookmark</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MapPage</servlet-name>
+        <jsp-file>/WEB-INF/views/map.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MapPage</servlet-name>
+        <url-pattern>/map</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MypagePage</servlet-name>
+        <jsp-file>/WEB-INF/views/mypage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MypagePage</servlet-name>
+        <url-pattern>/mypage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReportPage</servlet-name>
+        <jsp-file>/WEB-INF/views/report.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportPage</servlet-name>
+        <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+
 </web-app>

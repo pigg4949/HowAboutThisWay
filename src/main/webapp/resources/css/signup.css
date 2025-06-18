@@ -1,0 +1,190 @@
+@import "common.css";
+
+/* 1) 컨테이너 배경 & 스크롤 설정 */
+#app {
+    /* 기존 설정 … */
+    position: relative;
+    width: 360px; height: 800px;
+    overflow-y: auto;
+    background: url("../images/background.jpg") no-repeat center top/cover;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 80px 16px 24px;
+    box-sizing: border-box;
+}
+
+
+/* 뒤로가기 화살표 */
+.backButton {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 24px;
+    color: var(--textColor);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* 페이지 제목 “회원가입” */
+.pageTitle {
+    margin: 0 0 32px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ▶ 인풋+버튼 컨테이너 */
+.inputWithButton {
+    display: flex;
+    align-items: flex-start;   /* 상단 정렬로 변경 */
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* ▶ 인풋과 버튼 동일 높이 */
+.inputWithButton input,
+.inputWithButton button {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 48px;
+    border-radius: var(--borderRadius);
+    box-sizing: border-box;
+}
+
+/* ▶ 인풋은 늘리고 */
+.inputWithButton input {
+    flex: 1;
+}
+
+/* ▶ 버튼은 고정폭으로 */
+.inputWithButton button {
+    flex-shrink: 0;
+    background-color: var(--primaryColor);
+    color: var(--primaryTextColor);
+    border: none;
+    cursor: pointer;
+    /* 텍스트 정확히 중앙에 배치 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 주민등록번호 앞/뒤 2칸 배열 */
+.ssnGroup {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.ssnGroup input {
+    flex: 1;
+    height: 48px;
+}
+
+/* 약관 동의 라인 */
+.terms {
+    width: 100%;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.terms .term {
+    display: flex;
+    align-items: center;
+}
+.terms .term input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+.terms .term label {
+    margin-left: 8px;
+    font-size: 14px;
+}
+.terms .term a {
+    margin-left: auto;
+    font-size: 14px;
+    color: var(--primaryTextColor);
+    text-decoration: none;
+}
+
+/* 회원가입 제출 버튼 */
+.formButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* 가로 중앙 배치 */
+    margin-top: 24px;
+}
+.formButtons .buttonPrimary {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 48px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background-color: var(--primaryColor);
+    color: var(--primaryTextColor);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 약관 모달 스타일 */
+.term-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.13);
+    justify-content: center;
+    align-items: center;
+}
+.term-modal.active {
+    display: flex;
+}
+.term-modal-content {
+    background: #fff;
+    border-radius: var(--borderRadius);
+    max-width: 350px;
+    width: 94vw;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    padding: 0 0 24px 0;
+    animation: modalIn 0.16s;
+}
+@keyframes modalIn {
+    from { transform: translateY(44px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+}
+.term-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px 0 20px;
+}
+#termModalTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+.term-modal-close {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #999;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+.term-modal-body {
+    padding: 14px 20px 0 20px;
+    font-size: 16px;
+    color: #444;
+    max-height: 340px;
+    overflow-y: auto;
+    line-height: 1.68;
+    text-align: left;
+}

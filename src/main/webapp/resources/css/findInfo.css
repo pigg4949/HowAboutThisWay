@@ -1,0 +1,107 @@
+@import "common.css";
+
+/* 1) 앱 컨테이너: 배경, 크기, 중앙정렬, 스크롤 */
+#app {
+    position: relative;
+    width: 360px;
+    height: 800px;
+    margin: 0 auto;
+    background: url("../images/background.jpg") no-repeat center top/cover;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding-top: 16px;
+}
+
+/* 2) 헤더: 뒤로가기 + 타이틀 배치 */
+#app > header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 16px 24px;
+}
+.backButton {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    margin: 0;
+    font-size: 24px;
+    color: var(--textColor);
+    text-decoration: none;
+    z-index: 10;
+}
+header h2 {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--textColor);
+    margin: 0;
+}
+
+/* 3) 아이디 찾기 / 비밀번호 찾기 섹션 공통 */
+section.findId,
+section.findPw {
+    width: calc(100% - 32px);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: var(--borderRadius);
+    padding: 24px 16px;
+    margin: 0 auto 24px;
+    box-sizing: border-box;
+}
+
+/* 4) 섹션 제목 스타일 (아이디/비번 모두 동일) */
+section.findId h2,
+section.findPw h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--textColor);
+}
+
+/* 5) 입력창 스타일 */
+section.findId input,
+section.findPw input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background: #fff;
+    box-sizing: border-box;
+    color: var(--textColor);
+}
+
+/* 6) 아이디 찾기 버튼 */
+section.findId button[type="submit"] {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background-color: var(--primaryColor);
+    color: var(--primaryTextColor);
+    cursor: pointer;
+}
+
+/* 7) input + button 조합 */
+.inputWithButton {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.inputWithButton input {
+    flex: 1;
+}
+.inputWithButton button {
+    flex: 0 0 96px;
+    height: 48px;
+    font-size: 14px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background-color: var(--primaryColor);
+    color: var(--primaryTextColor);
+    cursor: pointer;
+}
