@@ -39,3 +39,8 @@ build/
 
 # .env 무시
 .env
+
+
+# Tomcat metadata
+artifacts/
+libraries/
